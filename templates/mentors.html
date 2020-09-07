@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block content %}
+    <form action="/mentors_city">
+    <div  style="width:200px;">
+  <select name="city-name">
+    <option value="Bucharest">Bucharest</option>
+    <option value="Budapest">Budapest</option>
+    <option value="Kraków">Kraków</option>
+    <option value="Miskolc">Miskolc</option>
+    <option value="Warsaw">Warsaw</option>
+  </select>
+    <button type="submit">Search</button>
+    </div></form>
     <div>
         <form action="/mentors">
             <label for="name-input">Filter by mentor last name:</label>

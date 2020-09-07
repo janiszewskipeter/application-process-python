@@ -21,8 +21,21 @@ def get_mentors_by_last_name(cursor: RealDictCursor, last_name: str) -> list:
     query ="""
         SELECT first_name, last_name, city
         FROM mentor
-        WHERE last_name =%(last_name)s
+        WHERE last_name = %(last_name)s
         ORDER BY first_name"""
     args = {'last_name': last_name}
     cursor.execute(query, args)
     return cursor.fetchall()
+
+@database_common.connection_handler
+def get_mentors_by_city(cursor: RealDictCursor, mentor_city: str) -> list:
+    query ="""
+        SELECT first_name, last_name, city
+        FROM mentor
+        WHERE city = %(mentor_city)s
+        ORDER BY first_name"""
+    args = {'mentor_city': mentor_city}
+    cursor.execute(query, args)
+    return cursor.fetchall()
+
+
