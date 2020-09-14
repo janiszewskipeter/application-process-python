@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Add Applicant
+{% endblock %}
+
+{% block content %}
+
+    <div id="add_applicants">
+
+    </div>
+    <form action="/add_applicant",  method="POST">
+        <input type="text" name="name" placeholder="Enter name"><br>
+        <input type="text" name="last_name" placeholder="Enter last name"><br>
+        <input type="text" name="email" placeholder="Enter email"><br>
+        <input type="text" name="phone_nr" placeholder="Enter phone number"><br>
+        <button type="submit">Add applicant</button></form>
+
+
+    {% include 'footer.html' %}
+{% endblock %}

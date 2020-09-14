@@ -6,3 +6,8 @@ body {
 .content-wrapper {
     padding: 10%;
 }
+
+table, th, td {
+  border: 1px solid black;
+    text-align: center;
+}

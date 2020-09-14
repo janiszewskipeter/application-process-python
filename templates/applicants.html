@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Applicants list
+{% endblock %}
+
+{% block content %}
+
+    <div id="applicants">
+        {% for applican in applicans %}
+            Name: {{ applican.first_name + " " + applican.last_name }}, Phone number: {{ applican.phone_number }}, Code: <a href="{{ url_for('applicant_info', application_code=applican.application_code) }}">{{ applican.application_code }}</a><br>
+
+    {% endfor %}
+    </div>
+    <form action="/delete_by_email_ending",  method="POST">
+        <input type="text" name="email-ending" placeholder="Enter email ending">
+        <button type="submit">Delete all users by email ending</button></form>
+
+    {% include 'footer.html' %}
+{% endblock %}
